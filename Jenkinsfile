@@ -18,7 +18,7 @@ pipeline{
 
                 script {
 
-                    sh 'mvn clean compile -Dmaven.compiler.args="--add-opens com.sun.tools.javac.processing=ALL-UNNAMED"'
+                    sh 'mvn clean install -DskipTests'
                 }
             }
 
