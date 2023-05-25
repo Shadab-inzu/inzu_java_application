@@ -66,6 +66,17 @@ pipeline{
                     
                 }
             }
+        stage('maven build'){
+        when { expression { params.action == 'create'} }
+            steps{
+
+                script {
+                    
+                    sh 'mvn clean install'
+                }
+                    
+                }
+            }
 
         
 
