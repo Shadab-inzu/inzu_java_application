@@ -84,7 +84,7 @@ pipeline{
                 script {
                     
                     sh """
-                    docker build -t springboot/javapp .
+                    docker build -t 9945917850/javapp .
                    
                      """
                 }
@@ -98,7 +98,7 @@ pipeline{
                 script {
                     
                     sh """
-                    trivy image springboot/javapp >scan.txt
+                    trivy image 9945917850/javapp >scan.txt
                     cat scan.txt
                    
                      """
@@ -116,7 +116,7 @@ pipeline{
                     withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
                    sh """
                    docker login -u '$USER' -p '$PASS'
-                   docker push springboot/javapp
+                   docker push 9945917850/javapp
                    """
                 }
                    
