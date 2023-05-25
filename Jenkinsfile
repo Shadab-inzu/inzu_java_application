@@ -91,6 +91,21 @@ pipeline{
                     
                 }
             }
+           stage('Trivy scan'){
+        when { expression { params.action == 'create'} }
+            steps{
+
+                script {
+                    
+                    sh """
+                    trivy image springboot/javapp >scan.txt
+                    cat scan.txt
+                   
+                     """
+                }
+                    
+                }
+            }
 
         
 
