@@ -106,7 +106,7 @@ pipeline{
                     
                 }
             }
-                  stage('Docker Push'){
+        stage('Docker Push'){
         when { expression { params.action == 'create'} }
             steps{
 
@@ -125,8 +125,22 @@ pipeline{
                     
                 }
             }
+         stage('Docker Image cleanup'){
+        when { expression { params.action == 'create'} }
+            steps{
 
-        
+                script {
+                    
+                    sh """
+                    docker rmi 9945917850/javapp 
+                    docker rmi springboot/javapp
+                    
+                   
+                     """
+                }
+                    
+                }
+            }       
 
 
     }
