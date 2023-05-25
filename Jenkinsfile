@@ -18,7 +18,18 @@ pipeline{
 
                 script {
 
-                    sh 'mvn clean install -DskipTests'
+                    sh 'mvn test'
+                }
+            }
+
+        }
+        stage('Integration Test Maven'){
+
+            steps{
+
+                script {
+
+                    sh 'mvn verify -DskipUnitTests'
                 }
             }
 
