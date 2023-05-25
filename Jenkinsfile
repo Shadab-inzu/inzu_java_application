@@ -106,6 +106,25 @@ pipeline{
                     
                 }
             }
+                  stage('Docker Push'){
+        when { expression { params.action == 'create'} }
+            steps{
+
+                script {
+                    
+                    
+                    withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
+                   sh """
+                   docker login -u '$USER' -p '$PASS'
+                   docker push springboot/javapp
+                   """
+                }
+                   
+                     
+                }
+                    
+                }
+            }
 
         
 
