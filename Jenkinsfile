@@ -1,8 +1,14 @@
 pipeline{
     agent any 
+
+    parameters{
+        choice(name:'action', choices:'create\delete', description: 'choose create/destroy')
+    }
     stages{
         stage('git checkout'){
 
+            when { expression { param.action=='create'}}
+            
             steps{
 
                 script {
@@ -30,6 +36,17 @@ pipeline{
                 script {
 
                     sh 'mvn verify -DskipUnitTests'
+                }
+            }
+
+        }
+        stage('Static code analysis'){
+
+            steps{
+
+                script {
+
+                    sh 'mvn clean package sonar:sonar'
                 }
             }
 
