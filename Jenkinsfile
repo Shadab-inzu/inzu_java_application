@@ -29,7 +29,7 @@ pipeline{
             }
 
         }
-        /*stage('Integration Test Maven'){
+        stage('Integration Test Maven'){
         when { expression { params.action == 'create'} }
             steps{
 
@@ -40,7 +40,7 @@ pipeline{
             }
 
         }
-        stage('Static code analysis'){
+        /*stage('Static code analysis'){
         when { expression { params.action == 'create'} }
             steps{
 
