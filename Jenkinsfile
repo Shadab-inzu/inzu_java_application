@@ -18,7 +18,7 @@ pipeline{
             }
 
         }
-        /*stage('Unit Test Maven'){
+        stage('Unit Test Maven'){
 
             steps{
 
@@ -29,7 +29,7 @@ pipeline{
             }
 
         }
-        stage('Integration Test Maven'){
+        /*stage('Integration Test Maven'){
         when { expression { params.action == 'create'} }
             steps{
 
