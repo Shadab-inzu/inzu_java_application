@@ -77,21 +77,21 @@ pipeline{
                     
                 }
             }
-        /*stage('Docker Image build'){
+        stage('Docker Image build'){
         when { expression { params.action == 'create'} }
             steps{
 
                 script {
                     
                     sh """
-                    docker build -t 9945917850/javapp .
+                    docker build -t 9945917850/new_java_app .
                    
                      """
                 }
                     
                 }
             }
-           stage('Trivy scan'){
+           /*stage('Trivy scan'){
         when { expression { params.action == 'create'} }
             steps{
 
