@@ -113,7 +113,7 @@ pipeline{
                 script {
                     
                     
-                    withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
+                    withCredentials([usernamePassword(credentialsId: 'Docker', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
                    sh """
                    docker login -u '$USER' -p '$PASS'
                    docker push 9945917850/new_java_app
