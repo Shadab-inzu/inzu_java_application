@@ -106,7 +106,7 @@ pipeline{
                     
                 }
             }
-        /*stage('Docker Push'){
+        stage('Docker Push'){
         when { expression { params.action == 'create'} }
             steps{
 
@@ -116,7 +116,7 @@ pipeline{
                     withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
                    sh """
                    docker login -u '$USER' -p '$PASS'
-                   docker push 9945917850/javapp
+                   docker push 9945917850/new_java_app
                    """
                 }
                    
@@ -125,7 +125,7 @@ pipeline{
                     
                 }
             }
-         stage('Docker Image cleanup'){
+         /*stage('Docker Image cleanup'){
         when { expression { params.action == 'create'} }
             steps{
 
