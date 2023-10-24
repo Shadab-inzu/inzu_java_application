@@ -55,18 +55,18 @@ pipeline{
             }
 
         }
-        /*stage('Quality Gate Status'){
+        stage('Quality Gate Status'){
         when { expression { params.action == 'create'} }
             steps{
 
                 script {
                     
-                    waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api'
+                    waitForQualityGate abortPipeline: false, credentialsId: 'sonar-token'
                 }
                     
                 }
             }
-        stage('maven build'){
+        /*stage('maven build'){
         when { expression { params.action == 'create'} }
             steps{
 
