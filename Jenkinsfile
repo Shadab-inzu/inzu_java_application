@@ -91,14 +91,14 @@ pipeline{
                     
                 }
             }
-           /*stage('Trivy scan'){
+           stage('Trivy scan'){
         when { expression { params.action == 'create'} }
             steps{
 
                 script {
                     
                     sh """
-                    trivy image 9945917850/javapp >scan.txt
+                    trivy image 9945917850/new_java_app >scan.txt
                     cat scan.txt
                    
                      """
@@ -106,7 +106,7 @@ pipeline{
                     
                 }
             }
-        stage('Docker Push'){
+        /*stage('Docker Push'){
         when { expression { params.action == 'create'} }
             steps{
 
