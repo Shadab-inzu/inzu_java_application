@@ -66,7 +66,7 @@ pipeline{
                     
                 }
             }
-        /*stage('maven build'){
+        stage('maven build'){
         when { expression { params.action == 'create'} }
             steps{
 
@@ -77,7 +77,7 @@ pipeline{
                     
                 }
             }
-        stage('Docker Image build'){
+        /*stage('Docker Image build'){
         when { expression { params.action == 'create'} }
             steps{
 
