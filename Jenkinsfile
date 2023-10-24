@@ -40,12 +40,12 @@ pipeline{
             }
 
         }
-        /*stage('Static code analysis'){
+        stage('Static code analysis'){
         when { expression { params.action == 'create'} }
             steps{
 
                 script {
-                    withSonarQubeEnv(credentialsId: 'sonar-api') {
+                    withSonarQubeEnv(credentialsId: 'sonar-token') {
                     // some block
                     sh 'mvn clean package sonar:sonar'
                     
@@ -55,7 +55,7 @@ pipeline{
             }
 
         }
-        stage('Quality Gate Status'){
+        /*stage('Quality Gate Status'){
         when { expression { params.action == 'create'} }
             steps{
 
